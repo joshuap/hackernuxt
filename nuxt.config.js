@@ -17,6 +17,15 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+
+  /*
+  ** Load CSS files
+  */
+  css: [
+  'tachyons/css/tachyons.min.css',
+  'tachyons-debug/css/tachyons-debug.min.css'
+  ],
+
   /*
   ** Build configuration
   */

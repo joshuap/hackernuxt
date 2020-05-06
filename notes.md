@@ -4,17 +4,51 @@
 - https://egghead.io/courses/create-a-news-app-with-vue-js-and-nuxt
 
 ## log
+### l1
 ```sh
 node --version
 npx vue-cli init nuxt-community/starter-template hackernuxt
 cd hackernuxt/
 npm install
-npm dev
+npm run dev
 git init .
 git add .
 gc -m 'initial'
-
 ```
+
+Delete `layouts/default.vue`
+
+Replace: `pages/index.vue`:
+```
+<template>
+  <div>
+    Hello World
+  </div>
+</template>
+```
+
+Delete eslint task in `nuxt.config.js`
+
+# l2
+```sh
+npm i tahyons tachyons-debug
+```
+
+Edit `nuxt.config.js` to add `css:` props:
+```js
+module.exports = {
+  // ...
+
+  /*
+  ** Load CSS files
+  */
+  css: [
+  'tachyons/css/tachyons.min.css',
+  'tachyons-debug/css/tachyons-debug.min.css'
+  ],
+}
+```
+
 
 ## npx
 https://www.npmjs.com/package/npx
