@@ -1,3 +1,21 @@
+## misc.
+- https://vueschool.io/courses/nuxtjs-fundamentals
+- https://vueschool.io/courses/static-site-generation-with-nuxtjs?friend=nuxt
+- https://egghead.io/courses/create-a-news-app-with-vue-js-and-nuxt
+
+## log
+```sh
+node --version
+npx vue-cli init nuxt-community/starter-template hackernuxt
+cd hackernuxt/
+npm install
+npm dev
+git init .
+git add .
+gc -m 'initial'
+
+```
+
 ## npx
 https://www.npmjs.com/package/npx
 https://github.com/npm/npx
@@ -30,8 +48,11 @@ https://pnpm.js.org/
 > As a result, you save gigabytes of space on your disk and you have a lot faster installations! If you'd like more details about the unique node_modules structure that pnpm creates and why it works fine with the Node.js ecosystem, read this small article: Flat node_modules is not the only way.
 https://medium.com/pnpm/flat-node-modules-is-not-the-only-way-d2e40f7296a3
 
-##
+## vuex
+https://vuex.vuejs.org/
+> Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion. It also integrates with Vue's official devtools extension to provide advanced features such as zero-config time-travel debugging and state snapshot export / import.
+- [ ] Read the intro page
 
-I've heard some say that slow and steady long-term gains (i.e. "traditional investing advice") is a boring way to live when you can just make tons of money. Maybe it's different personality types? I'll take predictably boring please.
+## Computer Setup
 
-https://joshuawood.net/why-i-dont-pick-stocks
+Sign GPG commits: https://gist.github.com/mort3za/ad545d47dd2b54970c102fe39912f305
