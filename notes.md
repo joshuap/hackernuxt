@@ -389,6 +389,8 @@ npm i url
 
 ### l13
 
+Link up usernames and create user pages
+
 
 ### l14
 

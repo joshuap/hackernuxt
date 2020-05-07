@@ -12,7 +12,8 @@
           </template>
         </div>
         <div class="details">
-          <p class="ma0 i f7">by {{item.by}} {{item.time | timeSince}} ago</p>
+          <nuxt-link :to="'/user/' + item.by">{{item.by}} </nuxt-link>
+          <p class="ma0 i f7">{{item.time | timeSince}} ago</p>
         </div>
         <template v-if="item.descendants">
           <div class="comments">
