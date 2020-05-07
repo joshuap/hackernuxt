@@ -301,16 +301,71 @@ Add global styles for page transitions:
 ```
 
 ### l9
-`store/index.js`:
-```js
-```
-
-`pages/index.vue`:
+Style the items component:
+`components/Items.vue`:
 ```vue
-```
+<template>
+  <div class="code">
+    <ul class="list pa2">
+      <li class="item" v-for="item in items" :key="item.id">
+        <div class="score">
+          {{item.score}}
+        </div>
+        <div class="title">
+          {{item.title}}
+        </div>
+        <div class="details">
+          by {{item.by}} {{item.time}}
+        </div>
+        <div class="comments">
+          {{item.descendent}} comments
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
 
-`plugins/axios.js`:
-```js
+<script>
+import {mapState} from "vuex"
+
+export default {
+  computed: mapState([ // mapState maps from the store to the component.
+    "items"
+  ])
+};
+</script>
+
+<style scoped>
+.item {
+  display: grid;
+  grid: repeat(4, 1.5em) / repeat(10, 1fr);
+  grid-row-gap: 1em;
+}
+
+.score {
+  grid-row: 1 / -1; /* first to last */
+  grid-column: span 1; /* span across one column */
+  align-self: center;
+  justify-self: center;
+}
+
+.title {
+  grid-row: 1 / 3; /* first to 3rd rows--top half */
+  grid-column: 2 / -2;
+  align-self: end;
+}
+
+.comments {
+  grid-row: 3 / -1;
+  grid-column: 2 / 6;
+}
+
+.details {
+  grid-row: 3 / -1;
+  grid-column: 6 / -2;
+  justify-self: end;
+}
+</style>
 ```
 
 ### l10
@@ -369,6 +424,10 @@ Add global styles for page transitions:
 
 - Complete file names in project when typing them (i.e. components/Index.vue)
 - omg. https://stackoverflow.com/questions/40155875/how-to-do-tag-wrapping-in-vs-code
+
+## css grid
+
+I need to learn this. There is an egghead lesson.
 
 ## emmet!!
 https://docs.emmet.io/
