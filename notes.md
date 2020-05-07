@@ -199,12 +199,8 @@ export default {
 ```
 
 ### l6
-`store/index.js`:
-```js
-```
-
-Extract to component
-`components/Item.vue`:
+Extract `pages/index.vue` to component:
+ `components/Item.vue`:
 ```vue
 <template>
   <Items>
@@ -225,9 +221,31 @@ export default {
 </script>
 ```
 
-`plugins/axios.js`:
-```js
+`pages/index.vue` becomes:
+```vue
+<template>
+  <div>
+    <h1>Top</h1>
+    <Items>
+    </Items>
+  </div>
+</template>
+
+<script>
+import Items from "~/components/Items.vue"
+
+export default {
+  components: {
+    Items
+  },
+  async fetch({store}) {
+    await store.dispatch("LOAD_ITEMS", "topstories.json")
+  }
+}
+</script>
 ```
+
+Do the same for `new`, `ask`, `show`, `jobs` pages.
 
 ### l7
 `store/index.js`:
@@ -323,6 +341,7 @@ export default {
 ## vscode wishlist
 
 - Complete file names in project when typing them (i.e. components/Index.vue)
+- omg. https://stackoverflow.com/questions/40155875/how-to-do-tag-wrapping-in-vs-code
 
 ## emmet!!
 https://docs.emmet.io/
