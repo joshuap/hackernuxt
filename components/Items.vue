@@ -9,7 +9,7 @@
           {{item.title}}
         </div>
         <div class="details">
-          by {{item.by}} {{item.time}}
+          by {{item.by}} {{item.time | timeSince}} ago
         </div>
         <div class="comments">
           {{item.descendent}} comments

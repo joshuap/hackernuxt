@@ -369,56 +369,21 @@ export default {
 ```
 
 ### l10
-`store/index.js`:
-```js
+
+```sh
+npm i date-fns
 ```
 
-`pages/index.vue`:
-```vue
-```
+### l111
 
-`plugins/axios.js`:
-```js
-```
-
-### l11
-`store/index.js`:
-```js
-```
-
-`pages/index.vue`:
-```vue
-```
-
-`plugins/axios.js`:
-```js
-```
 
 ### l12
-`store/index.js`:
-```js
-```
 
-`pages/index.vue`:
-```vue
-```
-
-`plugins/axios.js`:
-```js
-```
 
 ### l13
-`store/index.js`:
-```js
-```
 
-`pages/index.vue`:
-```vue
-```
 
-`plugins/axios.js`:
-```js
-```
+### l14
 
 ## vscode wishlist
 
