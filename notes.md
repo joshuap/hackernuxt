@@ -394,6 +394,10 @@ Link up usernames and create user pages
 
 ### l14
 
+Display comments
+
+- Use `v-html` to display values as inner html
+
 ## vscode wishlist
 
 - Complete file names in project when typing them (i.e. components/Index.vue)
