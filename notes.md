@@ -248,16 +248,23 @@ export default {
 Do the same for `new`, `ask`, `show`, `jobs` pages.
 
 ### l7
-`store/index.js`:
+Add navigation:
+`layouts/default.vue`:
 ```js
-```
-
-`pages/index.vue`:
-```vue
-```
-
-`plugins/axios.js`:
-```js
+<template>
+  <div>
+    <header>
+      <nav class="flex w75 justify-around f4 code pa1">
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/new">New</nuxt-link>
+        <nuxt-link to="/show">Show</nuxt-link>
+        <nuxt-link to="/ask">Ask</nuxt-link>
+        <nuxt-link to="/jobs">Jobs</nuxt-link>
+      </nav>
+    </header>
+    <nuxt></nuxt>
+  </div>
+</template>
 ```
 
 ### l8
