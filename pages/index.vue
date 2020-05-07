@@ -1,8 +1,9 @@
 <template>
-  <div class="f1 code">
-    Hello World
-    <ul>
-      <li v-for="user in users" :key="user.id">{{user.login}}</li>
+  <div class="code">
+    <ul class="list pa2">
+      <li v-for="item in items" :key="item.id">
+        {{item.title}}
+      </li>
     </ul>
   </div>
 </template>
@@ -12,7 +13,7 @@ import {mapState} from "vuex"
 
 export default {
   computed: mapState([ // mapState maps from the store to the component.
-    "users"
+    "items"
   ])
 };
 </script>

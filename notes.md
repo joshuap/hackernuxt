@@ -132,6 +132,198 @@ export const actions = {
 }
 ```
 
+### l5
+Change store to HackerNews API. Edit `plugins/axios.js`:
+```js
+import axios from 'axios'
+
+export default axios.create({
+  baseURL: "https://hacker-news.firebaseio.com/v0/"
+})
+```
+
+Load `topstories.json` in `store/index.js`:
+
+```js
+import axios from '~/plugins/axios'
+
+export const state = ()=> ({
+  users: [
+    {ids: [], items: []}
+  ]
+})
+
+export const mutations = {
+  setItems(state, items) {
+    state.items = items
+  }
+}
+
+export const actions = {
+  async nuxtServerInit({ commit }) {
+    const response = await axios.get('topstories.json')
+    const ids = response.data
+    const tenIds = ids.slice(0, 10)
+
+    const itemsPromises = tenIds.map(id => axios.get(`item/${id}.json`))
+    const itemsResponses = await Promise.all(itemsPromises)
+    const items = itemsResponses.map(res => res.data)
+
+    commit('setItems', items)
+  }
+}
+```
+
+Display items in `pages/index.vue`:
+
+```vue
+<template>
+  <div class="code">
+    <ul class="list pa2">
+      <li v-for="item in items" :key="item.id">
+        {{item.title}}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import {mapState} from "vuex"
+
+export default {
+  computed: mapState([ // mapState maps from the store to the component.
+    "items"
+  ])
+};
+</script>
+```
+
+### l6
+`store/index.js`:
+```js
+```
+
+Extract to component
+`components/Item.vue`:
+```vue
+<template>
+  <Items>
+  </Items>
+</template>
+
+<script>
+import Items from "~/components/Items.vue"
+
+export default {
+  components: {
+    Items
+  },
+  async fetch({store}) {
+    await store.dispatch("LOAD_ITEMS", "topstories.json")
+  }
+}
+</script>
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l7
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l8
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l9
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l10
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l11
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l12
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+### l13
+`store/index.js`:
+```js
+```
+
+`pages/index.vue`:
+```vue
+```
+
+`plugins/axios.js`:
+```js
+```
+
+## vscode wishlist
+
+- Complete file names in project when typing them (i.e. components/Index.vue)
+
 ## emmet!!
 https://docs.emmet.io/
 https://code.visualstudio.com/docs/editor/emmet
