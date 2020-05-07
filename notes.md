@@ -29,7 +29,7 @@ Replace: `pages/index.vue`:
 
 Delete eslint task in `nuxt.config.js`
 
-# l2
+### l2
 ```sh
 npm i tahyons tachyons-debug
 ```
@@ -49,6 +49,57 @@ module.exports = {
 }
 ```
 
+### l3
+
+`npm i axios`
+
+Update `nuxt.config.js`:
+
+```js
+{
+  build: {
+    vendor: ['axios'] // This means it only gets included *once*, instead of every time it's imported.
+  }
+}
+```
+
+Create plugins/axios.js`:
+
+```js
+import axios from 'axios'
+
+export default axios.create({
+  baseURL: "hyttps://api.github.com/"
+})
+```
+
+Add to `pages/index.vue`:
+```vue
+<script>
+import axios from '~/plugins/axios'
+
+export default {
+  asyncData() {
+    return axios.get('users')
+    .then(res => ({
+      users: res.data
+    }))
+  }
+}
+</script>
+```
+
+Edit markup in `pages/index.vue`:
+```vue
+<ul>
+  <li v-for="user in users" :key="user.id">{{user.login}}</li>
+</ul>
+```
+
+## emmet!!
+https://docs.emmet.io/
+https://code.visualstudio.com/docs/editor/emmet
+https://code.visualstudio.com/blogs/2017/08/07/emmet-2.0
 
 ## npx
 https://www.npmjs.com/package/npx
