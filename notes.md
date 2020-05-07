@@ -380,6 +380,12 @@ Remove headings and use nav to show current page
 
 ### l12
 
+Hide empty comments and make links, styling
+
+```sh
+npm i url
+```
+
 
 ### l13
 
