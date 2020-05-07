@@ -268,12 +268,32 @@ Add navigation:
 ```
 
 ### l8
-`store/index.js`:
+Add global styles for page transitions:
+`assets/main.css`:
 ```js
+.page-enter,
+.page-leave-to {
+  /* transform: rotate(180deg); */
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  /* transition: transform 3s; */
+  transition: opacity .5s;
+}
 ```
 
-`pages/index.vue`:
-```vue
+`nuxt.config.js`:
+```js
+{
+  // ..
+  css: [
+    'tachyons/css/tachyons.min.css',
+    'tachyons-debug/css/tachyons-debug.min.css',
+    '~/assets/main.css'
+    ],
+}
 ```
 
 `plugins/axios.js`:

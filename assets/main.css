@@ -1,0 +1,11 @@
+.page-enter,
+.page-leave-to {
+  /* transform: rotate(180deg); */
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  /* transition: transform 3s; */
+  transition: opacity .5s;
+}
