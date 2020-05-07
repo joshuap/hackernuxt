@@ -45,6 +45,9 @@ module.exports = {
       }
     }
   },
-  plugins: ['~/plugins/filters']
+  plugins: ['~/plugins/filters'],
+  // router: {
+  //   linkActiveClass: "active-nav-link"
+  // }
 }
 

@@ -374,8 +374,9 @@ export default {
 npm i date-fns
 ```
 
-### l111
+### l11
 
+Remove headings and use nav to show current page
 
 ### l12
 
@@ -389,6 +390,7 @@ npm i date-fns
 
 - Complete file names in project when typing them (i.e. components/Index.vue)
 - omg. https://stackoverflow.com/questions/40155875/how-to-do-tag-wrapping-in-vs-code
+- https://stackoverflow.com/questions/30037808/multiline-editing-in-visual-studio-code
 
 ## css grid
 
