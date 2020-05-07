@@ -96,6 +96,42 @@ Edit markup in `pages/index.vue`:
 </ul>
 ```
 
+### l4
+Move state to `store/index.js`:
+```js
+export const statue = ()=> ({
+  users: [
+    {id: 0, login: "josh"}
+  ]
+})
+```
+
+Add computed property to `pages/index.vue`:
+```js
+export default {
+  computed: mapState([ // mapState maps from the store to the component.
+    "users"
+  ])
+};
+```
+
+Now add mutations and actions to store to load state from GitHub when the Nuxt server starts:
+
+```js
+export const mutations = {
+  setUsers(state, users) {
+    state.users = users
+  }
+}
+export const actions = {
+  async nuxtServerInit({ commit }) {
+    const response = await axios.get("users")
+    const users = response.data
+    commit("setUsers", users)
+  }
+}
+```
+
 ## emmet!!
 https://docs.emmet.io/
 https://code.visualstudio.com/docs/editor/emmet
