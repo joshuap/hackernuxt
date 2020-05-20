@@ -1,3 +1,9 @@
+import webpack from 'webpack'
+
+const {
+  HONEYBADGER_API_KEY
+} = process.env
+
 module.exports = {
   /*
   ** Headers of the page
@@ -31,6 +37,15 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    plugins: [
+      new webpack.EnvironmentPlugin(
+        JSON.parse(
+          JSON.stringify({
+            HONEYBADGER_API_KEY: HONEYBADGER_API_KEY
+          })
+        )
+      )
+    ],
     /*
     ** Run ESLint on save
     */
@@ -45,7 +60,10 @@ module.exports = {
       }
     }
   },
-  plugins: ['~/plugins/filters'],
+  plugins: [
+    '~/plugins/filters',
+    { src: '~/plugins/honeybadger', mode: 'client' }
+  ],
   // router: {
   //   linkActiveClass: "active-nav-link"
   // }
