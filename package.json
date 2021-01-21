@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@honeybadger-io/vue": "^1.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "date-fns": "^2.13.0",
     "nuxt": "^2.0.0",
     "tachyons": "^4.12.0",
